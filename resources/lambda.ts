@@ -25,7 +25,7 @@ exports.handler = async function (event: any, context: any) {
                 if (posts) {
                     let params = {
                         Subject: 'Reddit crawler notification',
-                        Message: posts.map((post: any) => `${post.data.title} -> ${post.data.url}`).join('\n'),
+                        Message: posts.map((post: any) => `${post.title} -> ${post.url}`).join('\n'),
                         TopicArn: process.env.TOPIC_ARN
                     }
 
