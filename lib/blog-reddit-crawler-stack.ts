@@ -20,7 +20,8 @@ export class BlogRedditCrawlerStack extends cdk.Stack {
       functionName: 'reddit-crawler',
       environment: {
         TOPIC_ARN: topic.topicArn
-      }
+      },
+      timeout: cdk.Duration.seconds(30)
     });
 
     // Allow the lambda to publish to the topic
